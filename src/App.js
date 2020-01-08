@@ -5,25 +5,13 @@ import Chat from './components/Chat.js'
 import Youtube from './components/Youtube.js'
 
 
-// import { Route, BrowserRouter } from "react-router-dom";
-
-
-// import Signup from './Signup';
-
-// function App() {
-//   return (
-//     <Signup />
-//   )
-// }
-
-class App extends Component {
-  constructor() {
-    super();
+class App extends React.Component {
+  constructor(props) {
+    super(props);
 
     this.state = {
-
     }
-
+    console.log(this.state.userinfo)
   }
 
   getToken = () => {
@@ -54,19 +42,29 @@ class App extends Component {
 
   }
 
-  login = (event) => {
+    login = (event,props) => {
     event.preventDefault();
+
 
     let inputs = event.target.children;
 
     let username = inputs[0].value;
     let password = inputs[1].value;
 
+    this.setState({
+      userinfo: username
+    })
+
+
+    
+
     return _login(username, password).then(res => {
       if (res.token){
         this.setState({logged_in: true}, function(){
           localStorage.setItem('token', res.token);
+          console.log(username) 
         });
+
       }else{
         alert('you were not logged in')
       }
@@ -83,7 +81,9 @@ class App extends Component {
 
 
   render() {
+    
     return (
+      
       <div className="App">
         <header>
           <h1>{ this.state.name }</h1>
@@ -122,6 +122,7 @@ class App extends Component {
             // < home />
           <div>
             <div id="youtube-logo">
+              {/* {console.log(this.state.userinfo)} */}
               uTUBE
             </div>
             <div>
@@ -130,11 +131,13 @@ class App extends Component {
             </form>
             </div>
             <div>
+              <h1 id = 'welcome'> Hi {this.state.userinfo}</h1>
+            </div>
+            <div>
             <Youtube />
             </div>
-
             <div>
-            <Chat />
+              <Chat userinfo = {this.state.userinfo}/>
             </div>
 
 
@@ -148,23 +151,4 @@ class App extends Component {
 }
 
 export default App
-
-
-// import React from 'react';
-// import './App.css';
-// import Chat from './components/Chat.js'
-// import Youtube from './components/Youtube.js'
-
-
-
-// function App() {
-//   return (
-//     <div>
-//     <Chat />
-//     <Youtube />
-//     </div>
-//   )
-// }
-
-// export default App;
 

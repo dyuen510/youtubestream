@@ -2,23 +2,38 @@
 var express = require('express');
 var app = express();
 var socket = require('socket.io');
+var timeout;
 
-var server = app.listen(5000, function (){
+var server = app.listen(5000, function () {
     console.log('Listening on port 5000');
 });
 app.use(express.static('public'));
 
 var io = socket(server);
 
+// var feed = $('#feed');
+
+//user is typing
+function timeoutFunction() {
+    socket.emit("typing", false);
+}
+
+// socket.on('typing', function (data) {
+//     if (data) {
+//         feed.innerHTML = '<p><em>' + data + ' is typing...</em></p>';
+//     } else {
+//         feed.innerHTML = ''
+//     }
+// });
 
 //letting us know that the connection to the socket was complete and gives us the socket identification
-io.on('connection', function(socket){
-    console.log('made socket connection',socket.id)
+io.on('connection', function (socket) {
+    console.log('made socket connection', socket.id)
 
 });
 
 //socket.io connecting and emitting all messages to all opened clients
-io.on('connection', function(socket) {
+io.on('connection', function (socket) {
     socket.on('message', (message) => {
         socket.broadcast.emit('message', message)
         console.log('connection complete')

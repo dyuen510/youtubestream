@@ -1,6 +1,12 @@
 body{
   background-color: black;
 }
+
+#head{
+  color:white;
+  font-size:60px;
+  margin:20px;
+}
 .Message-box{
   float:right;
   border:2px solid darkslateblue;
@@ -45,25 +51,6 @@ body{
   outline:none;
 }
 
-#handle{
-  width:95%;
-  margin:2px;
-  border-style: solid;
-  border-width: 1px;
-  padding: 5px; 
-  border-radius:15px;
-  resize: none;
-  padding: 5px 10px;
-  height: 40px;
-  font-family: 'Lato', sans-serif;
-	font-size: 14px;
-  color: black;
-  flex: 1;
-  border: none;
-  background: rgba(61, 79, 158, 0.1);
-  border-bottom: 1px solid rgba(173, 26, 26, 0.09);
-  outline:none;
-}
 
 #greet{
   font-size:20px;
@@ -94,7 +81,6 @@ body{
   margin: 20px;
   width:98%;
   margin-left:20px;
-  /* text-align: center; */
 }
 
 .search-bar input{
@@ -135,18 +121,13 @@ body{
   text-align:left;
   padding:15px;
   border-bottom: 2px solid white;
-  /* border-radius:10px; */
-  /* margin:auto; */
   margin-left:-10px;
 }
 .video-list-media:hover {
   background-color: white;
-  /* background-image: linear-gradient(to right, rgb(247, 175, 175),rgb(156, 180, 233)); */
   color: black;
   height: 100%;
   width: 90%;
-  /* border: 10px solid white;
-  border-radius: 10px; */
 }
 
 
@@ -158,7 +139,7 @@ body{
 
 /* loginlogout */
 .container {
-  background-color: rgb(128, 159, 243);
+  background-color: #667177;
   padding: 20px;
   border: 10px;
   border-radius: 10px;
@@ -170,7 +151,7 @@ body{
 .form-input {
   padding: 5px;
   color: black;
-  background-color: burlywood;
+  background-color: lightgray;
   display: block;
   margin: 0 auto;
   margin-top: 2px;
@@ -179,6 +160,7 @@ body{
   border: 10px;
   border-radius: 10px;
   font-size: 18px;
+  
 
 }
 .submitButton {
@@ -191,7 +173,9 @@ body{
   border: 10px;
   border-radius: 10px;
   margin: 6px 3px 3px 3px;
+  margin-left:150px;
 }
+
 .logoutButton {
   background-color: rgb(255, 5, 5);
   color: white;
@@ -203,10 +187,20 @@ body{
   border-radius: 10px;
   margin: 2px 15px 10px 0;
   float: right;
+  position: relative;
+  top: -50px;
 }
 
 #youtube-logo {
   color: rgb(203, 219, 255);
   font-size: 40px;
   margin: 0 0 20px 30px;
+}
+
+#welcome {
+  color:white;
+  float:right;
+  position:relative;
+  top:-20px;
+  right:-100px;
 }

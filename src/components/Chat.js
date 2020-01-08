@@ -2,6 +2,7 @@
 
 import React from 'react';
 import '../App.css';
+import App from '../App.js'
 
 //creating the connection
 import io from 'socket.io-client';
@@ -9,8 +10,8 @@ import io from 'socket.io-client';
 
 
 class Chat extends React.Component {
-    constructor(props) {
-        super(props)
+    constructor() {
+        super()
         // const username = prompt('Enter your username')
         this.state = {
             messages: [],
@@ -18,23 +19,16 @@ class Chat extends React.Component {
             userName: []
         }
         this.sendMessage = this.sendMessage.bind(this)
-        this.handleClick = this.handleClick.bind(this)
+        // this.handleClick = this.handleClick.bind(this)
     }   
-    //adding username to the real time chat
-    // changeUsername(e){
-    //     e.preventDefault();
-    //     if(this.state.username.length){
-    //         this.props.setUsername(this.state.username);
-    //     }else{
-    //         alert('Please provide a username');
-    //     }
-    // }
-    // onChange(e){
-    //     this.setState({
-    //         username : e.target.value
-    //     })
-    // }
+
     componentDidMount() {
+        
+        // fetch('https://www.googleapis.com/youtube/v3/commentThreads?part=id%2Csnippet&videoId=XYBx__4iAUw&key=AIzaSyBdVut9QCzqAHBzfDEh30yUp4E529som6s')
+        fetch('https://www.googleapis.com/youtube/v3/comments?key=AIzaSyBdVut9QCzqAHBzfDEh30yUp4E529som6s/youtube/v3/comments/?/maxResults=5')
+        .then(results => {
+            return results.json();
+        })
         // const username = prompt('enter name here')
         this.socket = io('http://localhost:5000')
         this.socket.on('message', (message) => {
@@ -49,36 +43,31 @@ class Chat extends React.Component {
         const body = event.target.value
 
         if (event.keyCode === 13 && body) {
+            event.preventDefault();
             let message = {
                 body,
                 date: new Date().toLocaleString(),
-                users: this.state.userName
+                users: this.props.userinfo
                 //we can put the username when the user logs into the account
                 
             }
+            event.currentTarget.value="";
             // console.log('here', message)
             this.setState({ 
                 messages: [message, ...this.state.messages],
+                users: this.props.userinfo
             })
             this.socket.emit('message', message)
         }
-    }
-
-    handleClick = (event) => {
-        const userName = prompt('Enter username')
-
-        this.setState({
-            userName : userName
-        })
-        this.socket.emit('userName', userName)
     }
 
     render() {
         return (
             <div className='Message-box'>
                 
-                <p id = 'greet'> <strong>Hi {this.state.userName}</strong></p>
-                <input type ='button' id = 'userButton' value='Enter a username' onClick ={this.handleClick}></input>
+                <p id = 'greet'> <strong>Hi {this.props.userinfo} </strong></p>
+                {console.log(this.props.userinfo)}
+                {/* <input type ='button' id = 'userButton' value='Enter a username' onClick ={this.handleClick}></input> */}
                 <input type='text' id='commentBox' placeholder='enter a message' onKeyUp={this.sendMessage} ></input>
                 {this.state.messages.map((messages => {
                     return (<ul id='messages'><strong>{messages.users}</strong> : <small>{messages.date}</small> : <br />{messages.body}</ul>)
