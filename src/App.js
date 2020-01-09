@@ -23,8 +23,6 @@ class App extends React.Component {
     event.preventDefault();
 
     let inputs = event.target.children;
-    // let firstname = input[0].value;
-    // let lastname = input[1].value;
     let username = inputs[0].value;
     let password = inputs[1].value;
     let passwordConf = inputs[2].value;
@@ -86,12 +84,11 @@ class App extends React.Component {
       
       <div className="App">
         <header>
-          <h1>{ this.state.name }</h1>
 
           {!this.state.logged_in && 
           
           <div className="container">
-            <h1>Welcome</h1>
+            <h1 id ='head'>Utube</h1>
             <h2>Sign Up</h2>
             <form>
             <input class="form-input" type="text" name="firstname" placeholder="First Name" />
