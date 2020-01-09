@@ -11,8 +11,6 @@ app.use(express.static('public'));
 
 var io = socket(server);
 
-// var feed = $('#feed');
-
 //user is typing
 function timeoutFunction() {
     socket.emit("typing", false);
@@ -59,20 +57,6 @@ app.use(bodyParser());
 // Database configuration
 var databaseUrl = 'mongodb://localhost:27017/live-stream_db';
 var collections = ["live-stream_db"];
-
-
-// //letting us know that the connection to the socket was complete and gives us the socket identification
-// io.on('connection', function(socket){
-//     console.log('made socket connection',socket.id)
-
-// });
-// //socket.io connecting and emitting all messages to all opened clients
-// io.on('connection', function(socket) {
-//     socket.on('message', (message) => {
-//         socket.broadcast.emit('message', message)
-//         console.log('connection complete')
-//     })
-// })
 
 
 // Hook mongojs config to db variable
