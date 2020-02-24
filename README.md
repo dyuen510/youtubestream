@@ -13,3 +13,4 @@ By using MongoDB as the database we are able to capture the user info when they 
 
 Another feature on the app is the ability to have real time chat globally with all users in one chat box. This was allowed by implementing socket.io.
 
+Deployed Link: https://utube-project.herokuapp.com/
