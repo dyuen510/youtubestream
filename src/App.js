@@ -91,15 +91,15 @@ class App extends React.Component {
             <h1 id ='head'>Utube</h1>
             <h2>Sign Up</h2>
             <form>
-            <input class="form-input" type="text" name="firstname" placeholder="First Name" />
-              <input class="form-input" type="text" name="lastname" placeholder="Last Name" />
+            <input className="form-input" type="text" name="firstname" placeholder="First Name" />
+              <input className="form-input" type="text" name="lastname" placeholder="Last Name" />
             </form>
             <form id="signUpForm" onSubmit={this.signUp}>
-              <input class="form-input" type="text" name="username" placeholder="put in a username" />
-              <input class="form-input" type="password" name="password" placeholder="put in a password" />
-              <input class="form-input" type="password" name="password" placeholder="confirm your password" />
+              <input className="form-input" type="text" name="username" placeholder="put in a username" />
+              <input className="form-input" type="password" name="password" placeholder="put in a password" />
+              <input className="form-input" type="password" name="password" placeholder="confirm your password" />
 
-              <button class="submitButton">Sign Up</button>
+              <button className="submitButton">Sign Up</button>
               {/* <a href='/login' >have an account</a> */}
             </form>
             {/* < signin /> */}
