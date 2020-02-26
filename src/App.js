@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
 import { _signUp, _login } from './components/AuthService';
-import Chat from './components/Chat.js'
-import Youtube from './components/Youtube.js'
+import Chat from './components/Chat.js';
+import Youtube from './components/Youtube.js';
 
 
 class App extends React.Component {

@@ -20,5 +20,6 @@ const VideoListItem = (props) => {
     </li>
     );
 };
+// will edit css for the description later since right now it's using the same className as title of video.
 
 export default VideoListItem;

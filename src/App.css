@@ -1,3 +1,4 @@
+
 body{
   background-color: black;
 }
@@ -141,7 +142,14 @@ body{
 
 /* loginlogout */
 .container {
-  background-color: #667177;
+  color:white;
+  font-size:20px;
+  text-align:center;
+  background-image: url('assets/canon.jpg');
+  background-size: cover;
+  background-attachment: fixed;
+  background-position-y: center;
+  background-position-x: calc(50%);
   padding: 20px;
   border: 10px;
   border-radius: 10px;
@@ -153,7 +161,6 @@ body{
 .form-input {
   padding: 5px;
   color: black;
-  background-color: lightgray;
   display: block;
   margin: 0 auto;
   margin-top: 2px;
@@ -175,7 +182,6 @@ body{
   border: 10px;
   border-radius: 10px;
   margin: 6px 3px 3px 3px;
-  margin-left:150px;
 }
 
 .logoutButton {
