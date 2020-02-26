@@ -1,6 +1,10 @@
 
 ## Utube App
 
+<div align="center">
+    <img src="public/images/utubelogin.png" width="400px"</img> 
+</div>
+
 the Utube App is a video app that allows you to search for videos from youtube.com based on the keyword entered into the search bar. 
 
 <div align="center">
