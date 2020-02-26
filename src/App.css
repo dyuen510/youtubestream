@@ -144,6 +144,7 @@ body{
 .container {
   color:white;
   font-size:20px;
+  text-transform:uppercase;
   text-align:center;
   background-image: url('assets/canon.jpg');
   background-size: cover;
