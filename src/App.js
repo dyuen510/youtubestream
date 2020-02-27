@@ -3,6 +3,7 @@ import './App.css';
 import { _signUp, _login } from './components/AuthService';
 import Chat from './components/Chat.js';
 import Youtube from './components/Youtube.js';
+import Footer from './components/footer.js';
 
 
 class App extends React.Component {
@@ -136,7 +137,9 @@ class App extends React.Component {
             <div>
               <Chat userinfo = {this.state.userinfo}/>
             </div>
-
+            <div>
+              <Footer />
+            </div>
 
           </div>
           }

@@ -218,3 +218,13 @@ body{
   top:-20px;
   right:-100px;
 }
+
+/*footer*/
+
+.foot{
+  background-color:rgb(184, 184, 187);
+  height:50px;
+  width:100%;
+  text-align:center;
+  padding:10px;
+}
