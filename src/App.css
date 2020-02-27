@@ -1,6 +1,6 @@
 
 body{
-  background-color: black;
+  background-color:black;
 }
 
 #head{
@@ -118,13 +118,14 @@ body{
 }
 
 .video-list-media{
- width: 90%;
+  width: 90%;
   background-color:black;
   color: white;
   text-align:left;
   padding:15px;
   border-bottom: 2px solid white;
   margin-left:-10px;
+  font-size:12px;
 }
 .video-list-media:hover {
   background-color: white;
@@ -138,6 +139,10 @@ body{
   width:50%;
   height:400px;
   margin-left: 20px;
+}
+
+.description{
+  font-size:12px;
 }
 
 /* loginlogout */
