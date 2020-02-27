@@ -16,14 +16,14 @@ const VideoDetail = (props) => {
 
 //added Chat /> here but not sure if its the correct spot to place it at.
     return (
-        <div className="video-detail col-md-8">
+        <div className="video-detail col-xs-12 col-sm-12 col-md-8">
             <div className="embed-responsive embed-responsive-16by9">
                 <iframe className="embed-responsive-item" src={url}></iframe>
             
 
             </div>
-            <div className="details">
-                <div>{video.snippet.title}</div>
+            <div className="details col-xs-12 col-sm-12 col-md-8">
+                <div className = 'snippet col-xs-12 col-sm-12 col-md-8'>{video.snippet.title}</div>
                 <div className = 'description'>{video.snippet.description}</div>
                 {/* <div>{console.log(video.items[0])}</div> */}
                 

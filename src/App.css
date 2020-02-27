@@ -228,3 +228,32 @@ body{
   text-align:center;
   padding:10px;
 }
+
+/*media queries*/
+@media (max-width: 767px){
+  .container{
+    width:95%;
+    margin:0px;
+  }
+
+  .search-bar input{
+    width:95%;
+    margin-left:-15px;
+  }
+  .Message-box{
+    display:none;
+  }
+  .embed-responsive-item{
+    width:95%;
+    height:300px;
+    margin:5px;
+  }
+  .video-detail .details{
+    width:90%;
+    margin:5px;
+  }
+  .foot{
+    width:100%;
+
+  }
+}
