@@ -4,7 +4,7 @@ var app = express();
 var socket = require('socket.io');
 var timeout;
 
-var server = app.listen(5000, function () {
+var server = app.listen(process.env.PORT || 5000, function () {
     console.log('Listening on port 5000');
 });
 app.use(express.static('public'));
