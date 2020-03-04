@@ -1,4 +1,3 @@
-//might have to change the fetch path to heroku in order for deployed app to work
 export const _signUp = (username, password, phonenumber) => {
 	return fetch("http://localhost:5000/signup/", {
 		method: 'POST',
@@ -9,7 +8,7 @@ export const _signUp = (username, password, phonenumber) => {
 		body: JSON.stringify({ username, password, phonenumber })
 	}).then(res => res.json())
 }
-//might have to change the fetch path to heroku in order for deployed app to work
+
 export const _login = (username, password) => {
 	return fetch("http://localhost:5000/login/", {
 		method: 'POST',

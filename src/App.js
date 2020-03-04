@@ -54,9 +54,6 @@ class App extends React.Component {
       userinfo: username
     })
 
-
-    
-
     return _login(username, password).then(res => {
       if (res.token){
         this.setState({logged_in: true}, function(){

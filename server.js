@@ -175,8 +175,6 @@ app.post('/signup', function (req, res) {
             //hast is the encrypeted password user uses to sign in  
             bcrypt.hash(req.body.password, salt, function (err, hash) {
                 db.users.insert({
-                    // firstname: req.body.firstname,
-                    // lastname: req.body.lastname,
                     username: req.body.username,
                     password: hash
                 }, function (error, user) {
