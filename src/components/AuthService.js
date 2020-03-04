@@ -1,5 +1,5 @@
 export const _signUp = (username, password, phonenumber) => {
-	return fetch("http://localhost:5000/signup/", {
+	return fetch("https://utube-project.herokuapp.com/signup/", {
 		method: 'POST',
 		headers: {
 			'Accept': 'application/json',
@@ -10,7 +10,7 @@ export const _signUp = (username, password, phonenumber) => {
 }
 
 export const _login = (username, password) => {
-	return fetch("http://localhost:5000/login/", {
+	return fetch("https://utube-project.herokuapp.com/5000/login/", {
 		method: 'POST',
 		headers: {
 			'Accept': 'application/json',
