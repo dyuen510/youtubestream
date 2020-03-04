@@ -15,9 +15,12 @@
     "socket.io-client": "^2.3.0",
     "youtube-api-search": "0.0.5"
   },
+  "engines": {
+    "node": "10.15.3"
+  },
   "scripts": {
     "start": "node index.js",
-    "heroku-postbuild": "yarn run build"
+    "heroku-postbuild": "cd client && yarn && yarn run build"
   },
   "eslintConfig": {
     "extends": "react-app"
