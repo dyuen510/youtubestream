@@ -195,3 +195,5 @@ app.post('/signup', function (req, res) {
     });
 })
 
+
+/* app won't initiate on deployed link if nodemon server.js and yarn start is not done beforehand. */
